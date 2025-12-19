@@ -6,6 +6,10 @@ const app=express();
 app.get('/',(req,res)=>{
     res.send('Hello server is running')
 })
+app.post('/api/products',(req,res)=>{
+    console.log(req.body)
+    res.send(req.body)
+})
 mongoose.connect('mongodb+srv://admin:20020209@applicationdb.qi79asq.mongodb.net/Crud_App?appName=ApplicationDb')
 .then(()=>{
     console.log('connected to database')
